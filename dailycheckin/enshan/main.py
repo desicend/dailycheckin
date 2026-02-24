@@ -49,8 +49,6 @@ class EnShan(CheckIn):
         response = session.post(
             "https://www.right.com.cn/forum/plugin.php?id=erling_qd:action&action=sign",
             headers={
-                "Accept": "application/json, text/javascript, */*; q=0.01",
-                "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
                 "X-Requested-With": "XMLHttpRequest",
             },
             data=payload,
@@ -91,7 +89,7 @@ class EnShan(CheckIn):
     def get_info(session):
         msg = []
         response = session.get(
-            "https://www.right.com.cn/FORUM/home.php?mod=spacecp&ac=credit&showcredit=1",
+            "https://www.right.com.cn/forum/home.php?mod=spacecp&ac=credit&showcredit=1",
             headers={"Accept": EnShan._HTML_ACCEPT},
             timeout=15,
         )
